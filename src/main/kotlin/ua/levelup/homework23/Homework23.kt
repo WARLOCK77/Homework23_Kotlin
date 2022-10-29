@@ -31,13 +31,20 @@ fun pow(power: Int, number: Int): Double {
     return number.toDouble().pow(power)
 }
 
-fun filter(string:String, vararg symbols: Char):String{
+fun filter(string: String, vararg symbols: Char): String {
+//    val arrChars: MutableList<Char> = mutableListOf()
+//    for (i in string.indices) {
+//        for (j in symbols.indices){
+//            if (string[i]==symbols[j]){
+//                arrChars.add(symbols[j])
+//            }
+//        }
+//    }
+//    return arrChars.joinToString(separator = "")
     val arrChars: MutableList<Char> = mutableListOf()
-    for (i in string.indices) {
-        for (j in symbols.indices){
-            if (string[i]==symbols[j]){
-                arrChars.add(symbols[j])
-            }
+    symbols.forEach {
+        if (it in string){
+            arrChars.add(it)
         }
     }
     return arrChars.joinToString(separator = "")
